@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'SalesforceSans';
+  src:
+    url('/fonts/salesforce/woff/SalesforceSans-Book.woff2') format('woff2'),
+    url('/fonts/salesforce/woff/SalesforceSans-Book.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SalesforceSans';
+  src:
+    url('/fonts/salesforce/woff/SalesforceSans-Semibold.woff2') format('woff2'),
+    url('/fonts/salesforce/woff/SalesforceSans-Semibold.woff') format('woff');
+  font-display: swap;
+  font-style: medium;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src:
+    url('/fonts/firacode/woff2/FiraCode-Regular.woff2') format('woff2'),
+    url('/fonts/firacode/woff/FiraCode-Regular.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --background-color-mid: rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-mid: rgba(255, 255, 255, 0.2);
+  }
+}
+
+body {
+  font-family: SalesforceSans;
+}
+
+h1,
+h2 {
+  font-size: 2em;
+  letter-spacing: 0.05em;
+  line-height: 1.36em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+h1,
+.colorful {
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, #5e9fff, #c084fc, #e879f9);
+  box-decoration-break: clone;
+  text-transform: uppercase;
+  filter: drop-shadow(rgb(0, 0, 0, 0.8) 1px 1px 1px);
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+a {
+  color: #5e9fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(94, 159, 255, 0.5);
+}
+
+div.code-container {
+  padding: 12px 0;
+  border-radius: 20px;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+}
+
+p code,
+li > code,
+li a > code,
+ul > code {
+  border-radius: 6px;
+  margin: 0 -1px;
+  overflow-wrap: anywhere;
+  padding: 0 3px;
+}
+
+p,
+pre,
+ul,
+ol {
+  margin: 0.5em;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li::marker {
+  color: #c084fc;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+table.comparison {
+  font-size: 0.6em;
+}
+
+table.comparison td {
+  text-align: center;
+  padding: 4px;
+}
+
+table.comparison thead {
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--background-color-mid);
+}
+
+table.comparison tbody tr:nth-child(2n) {
+  background-color: var(--background-color-mid);
+}
+
+table.comparison tbody tr td:first-child {
+  font-weight: bold;
+}

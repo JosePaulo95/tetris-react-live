@@ -1,0 +1,969 @@
+export { Components } from './Components';
+export { Themes } from './Themes';
+
+--
+
+<Stack
+  center
+  stretch
+  style={{
+    imageRendering: 'pixelated',
+    inset: 0,
+    overflow: 'hidden',
+    position: 'absolute',
+    zIndex: 0,
+    zoom: 0.63,
+  }}
+>
+  <Video
+    src="/AC.mp4"
+    style={{
+      transform: 'translateY(-7%)',
+    }}
+  />
+</Stack>
+<Stack
+  center
+  selfCenter
+  stretch
+  style={{
+    width: '63%',
+    zIndex: 1,
+  }}
+  vertical
+>
+  <TitleBox
+    children={
+      <h1 style={{ marginBottom: 0 }}>Building the AI for Athena Crisis</h1>
+    }
+  />
+  <TitleBox
+    children={
+      <>
+        by Christoph Nakazawa{' '}
+        <a href="https://cpojer.net" style={{ textDecoration: 'none' }}>
+          @cpojer
+        </a>
+      </>
+    }
+    style={{
+      alignSelf: 'end',
+      color: '#000',
+      marginTop: 20,
+      padding: '12px 20px',
+    }}
+  />
+  <TitleBox
+    children={
+      <a
+        href="https://turn-based-ai.nakazawa.dev/"
+        style={{ textDecoration: 'none' }}
+      >
+        turn-based-ai.nakazawa.dev
+      </a>
+    }
+    style={{
+      alignSelf: 'end',
+      marginTop: 20,
+      padding: '12px 20px',
+    }}
+  />
+</Stack>
+
+---
+
+image: Cover.jpg
+
+--
+
+<Logo />
+
+# Nakazawa Tech KK
+
+---
+
+image: CoverEmpty.jpg
+transition: none
+
+--
+
+<Logo />
+
+# Nakazawa Tech KK
+
+<Center>
+  <Video
+    onClick={() => {
+      window.open('https://www.youtube.com/watch?v=m8SmXOTM8Ec');
+    }}
+    src="/ReactSummit.mp4"
+    style={{
+      borderRadius: 20,
+      cursor: 'pointer',
+      marginLeft: 10,
+      marginTop: -80,
+      outline: '4px solid black',
+      outlineOffset: '-4px',
+      width: '48%',
+    }}
+  />
+</Center>
+
+---
+
+image: CoverEmpty.jpg
+transition: none
+
+--
+
+# React Native
+
+<Center>
+  <Video
+    src="/ReactNative.mp4"
+    style={{
+      marginTop: -80,
+      borderRadius: 20,
+      width: '28%',
+    }}
+  />
+</Center>
+
+---
+
+image: CoverEmpty.jpg
+transition: none
+
+--
+
+# Jest & JavaScript Infra
+
+<Center>
+  <Video
+    src="/Jest.mp4"
+    style={{
+      marginTop: -60,
+      marginLeft: 10,
+      borderRadius: 20,
+      width: '45%',
+    }}
+  />
+</Center>
+
+---
+
+image: CoverEmpty.jpg
+theme: dark
+transition: leaveOnly
+
+--
+
+# Nakazawa Tech KK
+
+<Center>
+  <div
+    style={{
+      color: '#fff',
+      height: '50%',
+      width: '40%',
+    }}
+  >
+    Work with us!
+
+    - [nakazawa.dev](https://nakazawa.dev)
+
+    - [christoph@nakazawa.dev](mailto:christoph@nakazawa.dev)
+
+  </div>
+</Center>
+
+---
+
+theme: dark
+
+--
+
+<Center>
+
+<h1 style={{ paddingRight: 10 }}>
+  <i>Demo</i>
+</h1>
+
+</Center>
+
+---
+
+<Center>
+
+# Building the AI for Athena Crisis
+
+</Center>
+
+---
+
+transition: none
+
+--
+
+<Center>
+
+# Building the AI for Athena Crisis
+
+</Center>
+<div style={{
+    backdropFilter: 'blur(5px)',
+    backgroundColor: '#ff7d00aa',
+    borderBottom: '4px solid #fff',
+    borderTop: '4px solid #fff',
+    boxShadow: 'rgb(0, 0, 0, 0.6) 0 0 8px',
+    color: '#fff',
+    fontSize: '1.8em',
+    fontWeight: 'bold',
+    left: '50%',
+    padding: 24,
+    position: 'absolute',
+    textAlign: 'center',
+    textShadow: 'rgb(0, 0, 0, 0.4) 0.5px 1px 2px',
+    top: '50%',
+    transform: 'translate(-50%, -50%) rotate(-35deg)',
+    width: '120%',
+}}>Warning: Code Heavy Talk</div>
+
+---
+
+transition: leaveOnly
+
+--
+
+<Center>
+
+# Building the AI for Athena Crisis
+
+</Center>
+<div style={{
+    backdropFilter: 'blur(5px)',
+    backgroundColor: '#00bb00aa',
+    borderBottom: '4px solid #fff',
+    borderTop: '4px solid #fff',
+    boxShadow: 'rgb(0, 0, 0, 0.6) 0 0 8px',
+    color: '#fff',
+    fontSize: '1.8em',
+    fontWeight: 'bold',
+    left: '50%',
+    padding: 24,
+    position: 'absolute',
+    textAlign: 'center',
+    textShadow: 'rgb(0, 0, 0, 0.4) 0.5px 1px 2px',
+    top: '50%',
+    transform: 'translate(-50%, -50%) rotate(-35deg)',
+    width: '120%',
+}}>But: Beginner Friendly</div>
+
+---
+
+<Stack alignCenter nowrap style={{flex: 1}}>
+
+<div>
+
+<h1 style={{ fontSize: '1.6em' }}>AI Prerequisites</h1>
+
+- Good abstractions
+- Strong primitives
+- Search algorithms
+- Math for decision making
+
+</div>
+
+<div>
+
+<h1 style={{ fontSize: '1.6em' }}>AI Assumptions</h1>
+
+- Fast
+- Stateless
+- Deterministic
+- Composable
+
+</div>
+</Stack>
+
+---
+
+# Athena Crisis Architecture
+
+- Immutable persistent data structures
+- Declarative game state
+- Server ⇔ Client
+- Optimistic Updates
+- Actions → Transformers → Action Responses
+
+---
+
+transition: none
+
+--
+
+# Athena Crisis Architecture
+
+<Center>
+  <img src="/Actions.png" width="55%" />
+</Center>
+
+---
+
+transition: none
+
+--
+
+# Athena Crisis Architecture
+
+<Stack nowrap>
+
+<Code>
+
+```ts highlight={4,10,16}
+type Vector = { x: number; y: number };
+type AttackUnitAction = {
+  from: Vector;
+  to: Vector;
+  type: 'AttackUnit';
+};
+/// ----- transforms -----
+type AttackUnitActionResponse = {
+  from: Vector;
+  to: Vector;
+  type: 'AttackUnit';
+  unitA?: Unit;
+  unitB?: Unit;
+};
+/// ----- via codegen -----
+type EncodedAttackUnitActionResponse = [
+  type: 1,
+  fromX: number,
+  fromY: number,
+  toX: number,
+  toY: number,
+  unitA?: PlainUnit | null,
+  unitB?: PlainUnit | null,
+];
+```
+
+</Code>
+<Code>
+
+```ts highlight={18}
+function attackUnit(map: MapData, { from, to }: AttackUnitAction) {
+  const unitA = map.units.get(from);
+  const unitB = map.units.get(to);
+
+  if (
+    map.isOpponent(unitA, unitB) &&
+    !unitA.isCompleted() &&
+    unitA.canAttack(from.distance(to))
+  ) {
+    // damage calculation…
+    return {
+      from,
+      to,
+      type: 'AttackUnit',
+      unitA: a.isDead() ? undefined : a,
+      unitB: b.isDead() ? undefined : b,
+    };
+  }
+}
+```
+
+</Code>
+
+</Stack>
+
+---
+
+transition: none
+
+--
+
+# Athena Crisis Architecture
+
+<Code>
+
+```ts highlight={6,14}
+const VisibleAttackUnit = {
+  Both: true,
+
+  Source: ({ from, to, unitA }: AttackUnitActionResponse, map: MapData) => ({
+    direction: getAttackDirection(from, to),
+    from,
+    type: 'HiddenTargetAttackUnit',
+    unitA,
+    weapon: getAttackWeapon(map, from, map.units.get(to)),
+  }),
+
+  Target: ({ from, to, unitB }: AttackUnitActionResponse, map: MapData) => ({
+    direction: getAttackDirection(to, from),
+    to,
+    type: 'HiddenSourceAttackUnit',
+    unitB,
+    weapon: hasCounterAttack
+      ? getAttackWeapon(map, to, map.units.get(from))
+      : undefined,
+  }),
+};
+```
+
+</Code>
+
+---
+
+transition: none
+
+--
+
+# Athena Crisis Architecture
+
+<Code>
+
+```ts highlight={12,16}
+function applyActionResponse(
+  map: MapData,
+  actionResponse: ActionResponse,
+): MapData {
+  switch (actionResponse.type) {
+    case 'AttackUnit': {
+      const { from, to, unitA, unitB } = actionResponse;
+      const originalUnitA = map.units.get(from);
+      const originalUnitB = map.units.get(to);
+      let { units } = map;
+      units =
+        unitA && originalUnitA
+          ? units.set(from, originalUnitA.copy(unitA).complete())
+          : units.delete(from);
+      units =
+        unitB && originalUnitB
+          ? units.set(to, originalUnitB.copy(unitB))
+          : units.delete(to);
+
+      return map.copy({ units });
+    }
+  }
+}
+```
+
+</Code>
+
+---
+
+transition: leaveOnly
+
+--
+
+# Athena Crisis Architecture
+
+<Stack alignCenter center gap={64} nowrap>
+<Code>
+
+```ts
+map = applyActionResponse(map, {
+  from: { x: 1, y: 1 },
+  to: { x: 2, y: 3 },
+  type: 'Move',
+});
+
+map = applyActionResponse(map, {
+  from: { x: 2, y: 3 },
+  to: { x: 3, y: 3 },
+  type: 'AttackUnit',
+});
+```
+
+</Code>
+
+<GameVideo src="/Attack.mp4" />
+
+</Stack>
+
+---
+
+theme: dark
+
+--
+
+<Center>
+
+# Let's implement AI behaviors
+
+</Center>
+
+---
+
+# AI: Basics
+
+<Code>
+
+```ts highlight={4,10,19}
+class AthenaCrisisAI {
+  public readonly responses: ReadonlyArray<ActionRespones> = [];
+
+  private act(map: MapData, action: Action): MapData | null {
+    const response = executeAction(map, action);
+    this.responses.push(response);
+    return response;
+  }
+
+  private endTurn(map: MapData): MapData | null {
+    const currentMap = this.act(map, EndTurnAction());
+    if (!currentMap) {
+      throw new Error('Error executing end turn action.');
+    }
+    // Return `null` to indicate that the turn ended.
+    return null;
+  }
+
+  public action(map: MapData): MapData | null {
+    return this.endTurn(map);
+  }
+}
+```
+
+</Code>
+
+---
+
+transition: leaveOnly
+
+--
+
+# AI: Basics
+
+<Stack alignCenter nowrap>
+
+<Code>
+
+```ts highlight={3}
+let map = …;
+const ai = new AthenaCrisisAI();
+while (map?.getCurrentPlayer().isBot()) {
+  map = ai.action(map);
+}
+const responses = ai.responses; // [{type: 'EndTurn'}]
+```
+
+</Code>
+
+<GameVideo src="/AI1.mp4" />
+
+</Stack>
+
+---
+
+# AI: Move
+
+<Stack alignCenter nowrap>
+
+<Code>
+
+```ts highlight={2,8,9,10,12}
+class AthenaCrisisAI {
+  public action(map: MapData): MapData | null {
+    return this.move(map) || this.endTurn(map);
+  }
+  private move(map: MapData): MapData | null {
+    const [from, unit] = map.units.findFirst(
+      filterAvailableUnits(map.getCurrentPlayer()),
+    );
+    const positions = getInterestingPositions(map, from, unit);
+    const clusters = calculateClusters(map, positions);
+    const to = findPathToTargets(map, unit, clusters, from);
+    return to
+      ? this.act(currentMap, MoveAction(from, to))
+      : this.act(currentMap, CompleteUnitAction(from));
+  }
+}
+```
+
+</Code>
+<GameVideo src="/AI2.mp4" />
+
+</Stack>
+
+---
+
+# A\* – A Star
+
+<Center>
+
+<div style={{ position: 'relative', width: '30%' }}>
+  <GameVideo src="/AStar.mp4" style={{ opacity: 0, width: '100%' }} />
+  <img
+    src="/AStar.png"
+    width="130%"
+    style={{
+      bottom: 0,
+      left: -57,
+      opacity: 1,
+      position: 'absolute',
+      right: 0,
+      top: -55,
+    }}
+  />
+</div>
+
+</Center>
+
+---
+
+transition: leaveOnly
+
+--
+
+# A\* – A Star
+
+<Center>
+
+<div style={{ position: 'relative', width: '30%' }}>
+  <GameVideo src="/AStar.mp4" style={{ width: '100%' }} />
+  <img
+    src="/AStar.png"
+    width="130%"
+    style={{
+      bottom: 0,
+      left: -57,
+      opacity: 0.5,
+      position: 'absolute',
+      right: 0,
+      top: -55,
+    }}
+  />
+</div>
+
+</Center>
+
+---
+
+# AI: Get Interesting Positions
+
+<Code>
+
+```ts highlight={8,13,16}
+function getInterestingPositions(
+  map: MapData,
+  from: Vector,
+  unit: Unit,
+): ReadonlyArray<Vector> {
+  const isInDanger = !unit.info.hasAttack() || unit.isOutOfAmmo();
+  if (isInDanger) {
+    return map.buildings.filter((building) =>
+      map.matchesPlayer(unit, building),
+    );
+  }
+
+  if (unit.info.hasAbility(Ability.Capture)) {
+    return map.buildings.filter((building) => map.isOpponent(unit, building));
+  }
+
+  return map.units.filter((unitB) => map.isOpponent(unit, unitB));
+}
+```
+
+</Code>
+
+---
+
+# AI: Calculate Clusters
+
+<Stack alignCenter nowrap>
+  <img src="/Cluster1.png" width="45%" />
+  <img src="/Cluster2.png" width="45%" />
+</Stack>
+
+---
+
+transition: leaveOnly
+
+--
+
+# AI: Calculate Clusters
+
+<Code>
+
+```ts highlight={6}
+import skmeans from 'skmeans';
+
+function calculateClusters(
+  map: MapData,
+  positions: ReadonlyArray<Vector>,
+): ReadonlyArray<Vector> {
+  return skmeans(positions, 3, 'kmpp', 10).centroids.map((centroid) =>
+    position(Math.round(centroid[0]), Math.round(centroid[1])),
+  );
+}
+```
+
+</Code>
+
+---
+
+# AI: Find Path To Targets
+
+<Code>
+
+```ts highlight={6, 12}
+function findPathToTargets(
+  map: MapData,
+  unit: Unit,
+  targets: ReadonlyArray<Vector>,
+  from: Vector,
+): Vector | null {
+  let [target, radius] = findClosestTarget(map, unit, targets, from);
+  const moveableRadius = calculateRadius(map, unit, from);
+  while (target) {
+    if (moveableRadius.has(target.vector)) {
+      return target.vector;
+    }
+    target = (target.parent && radius.get(target.parent)) || null;
+  }
+  return null;
+}
+```
+
+</Code>
+
+---
+
+# AI: Move
+
+<Stack alignCenter nowrap>
+
+<Code>
+
+```ts highlight={2,8,9,10,12}
+class AthenaCrisisAI {
+  public action(map: MapData): MapData | null {
+    return this.move(map) || this.endTurn(map);
+  }
+  private move(map: MapData): MapData | null {
+    const [from, unit] = map.units.findFirst(
+      filterAvailableUnits(map.getCurrentPlayer()),
+    );
+    const positions = getInterestingPositions(map, from, unit);
+    const clusters = calculateClusters(map, positions);
+    const to = findPathToTargets(map, unit, clusters, from);
+    return to
+      ? this.act(currentMap, MoveAction(from, to))
+      : this.act(currentMap, CompleteUnitAction(from));
+  }
+}
+```
+
+</Code>
+<GameVideo src="/AI2.mp4" />
+
+</Stack>
+
+---
+
+# AI: Attack
+
+<Stack alignCenter nowrap>
+<Code>
+
+```ts highlight={2,5,12,15}
+class AthenaCrisisAI {
+  public action(map: MapData): MapData | null {
+    return this.attack(map) || this.move(map) || this.endTurn(map);
+  }
+  private attack(map: MapData): MapData | null {
+    let {from, to} = getBestAttack(
+      map,
+      map.units.filter(filterAvailableUnits(map.getCurrentPlayer()))),
+    );
+    if (from && to) {
+      let currentMap = map;
+      if (from.distance(to.vector) > 1 && to.parent) {
+        currentMap = this.act(currentMap, MoveAction(from, to.parent));
+        from = to.parent;
+      }
+      return this.act(currentMap, AttackAction(from, to.vector));
+    }
+    return null;
+  }
+}
+```
+
+</Code>
+
+<GameVideo src="/Attack2.mp4" />
+
+</Stack>
+
+---
+
+# AI: Get Best Attack
+
+<Code>
+
+```ts highlight={5,6,11}
+function getBestAttack(
+  map: MapData,
+  units: ReadonlyArray<[Vector, Unit]>,
+): Array<PossibleAttack> {
+  const possibleAttacks: Array<PossibleAttack> = [];
+  units.forEach(([position, unitA]) => {
+    attackable(map, unitA, position).forEach((item) => {
+      const { unit: unitB, vector } = item;
+      const damage = calculateLikelyDamage(unitA, unitB, map);
+
+      // Weight = Damage!?
+      let weight = damage;
+
+      possibleAttacks.push({
+        unitB,
+        from: position,
+        to: item,
+        weight,
+      });
+    });
+  });
+  return maxBy(possibleAttacks, ({ weight }) => weight);
+}
+```
+
+</Code>
+
+---
+
+# AI: Attack Weights
+
+<Stack nowrap>
+<Code>
+
+```ts highlight={4,19}
+let weight = damage; // Initialize `weight` with `damage`.
+const isKill = damage >= unitB.health;
+if (isKill) {
+  // Boost the weight if the unit will be killed.
+  weight = (1 / Math.max(damage, 5)) * Math.pow(MaxHealth, 2);
+  // Skip low damage actions.
+} else if (
+  damage < 10 &&
+  unitB.info.hasAttack() &&
+  !unitA.info.isLongRange() &&
+  position.distance(vector) === 1
+) {
+  const counter = calculateLikelyDamage(
+    unitB.modifyHealth(-damage),
+    unitA,
+    map,
+  );
+  // Skip if the counter attack is worse.
+  // No suicide.
+  if (counter > damage || counter > unitA.health) {
+    return;
+  }
+}
+```
+
+</Code>
+<Code>
+
+```ts highlight={2,9,12}
+const building = map.buildings.get(vector);
+if (unitB.canCapture() && building) {
+  weight *= unitB.isCapturing() ? 10 : 1;
+  // Prioritize specific unit states.
+} else if (
+  unitB.isTransportingUnits() ||
+  unitB.info.isLongRange() ||
+  building?.info.isPlayerHQ()
+) {
+  weight *= 6;
+  // Prioritize if the unit has an attack.
+} else if (unitB.info.hasAttack()) {
+  weight *= 5;
+} else if (…) {
+  …
+}
+```
+
+</Code>
+</Stack>
+
+---
+
+# AI: Attack
+
+<Stack alignCenter nowrap>
+<Code>
+
+```ts highlight={2,5,12,15}
+class AthenaCrisisAI {
+  public action(map: MapData): MapData | null {
+    return this.attack(map) || this.move(map) || this.endTurn(map);
+  }
+  private attack(map: MapData): MapData | null {
+    let {from, to} = getBestAttack(
+      map,
+      map.units.filter(filterAvailableUnits(map.getCurrentPlayer()))),
+    );
+    if (from && to) {
+      let currentMap = map;
+      if (from.distance(to.vector) > 1 && to.parent) {
+        currentMap = this.act(currentMap, MoveAction(from, to.parent));
+        from = to.parent;
+      }
+      return this.act(currentMap, AttackAction(from, to.vector));
+    }
+    return null;
+  }
+}
+```
+
+</Code>
+
+<GameVideo src="/Attack2.mp4" />
+
+</Stack>
+
+---
+
+# What's next?
+
+- Add support for all unit and building capabilities
+- Support "fog-of-war" by limiting the AIs vision
+- Add customizable AI Behaviors: aggressive, defensive, passive etc.
+- Predictive Optimization & Planning
+
+---
+
+# R<Lowercase>e</Lowercase>MDX
+
+- This talk was designed with React and MDX!
+- **Beautiful React & MDX Presentations:** [github.com/cpojer/remdx](https://github.com/cpojer/remdx)
+- **Source:** [github.com/nkzw-tech/turn-based-ai-talk](https://github.com/nkzw-tech/turn-based-ai-talk)
+
+---
+
+image: CoverEmpty.jpg
+theme: dark
+--
+
+<Logo />
+
+# Nakazawa Tech KK
+
+<Center>
+  <div
+    style={{
+      color: '#fff',
+      height: '50%',
+      width: '40%',
+    }}
+  >
+
+    Work with us!
+
+    - [nakazawa.dev](https://nakazawa.dev)
+
+    - [christoph@nakazawa.dev](mailto:christoph@nakazawa.dev)
+
+  </div>
+</Center>
