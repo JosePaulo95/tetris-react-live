@@ -7,14 +7,21 @@ export { Themes } from './Themes';
   center
   stretch
   style={{
-    backgroundColor: 'cornflowerblue',
+    imageRendering: 'pixelated',
     inset: 0,
     overflow: 'hidden',
     position: 'absolute',
     zIndex: 0,
     zoom: 0.63,
   }}
-></Stack>
+>
+  <Video
+    src="/AC.mp4"
+    style={{
+      transform: 'translateY(-7%)',
+    }}
+  />
+</Stack>
 <Stack
   center
   selfCenter
@@ -31,7 +38,14 @@ export { Themes } from './Themes';
     }
   />
   <TitleBox
-    children={<>José Paulo 😀</>}
+    children={
+      <>
+        José Paulo{' '}
+        <a href="https://cpojer.net" style={{ textDecoration: 'none' }}>
+          @cpojer
+        </a>
+      </>
+    }
     style={{
       alignSelf: 'end',
       color: '#000',
@@ -41,15 +55,12 @@ export { Themes } from './Themes';
   />
   <TitleBox
     children={
-      <>
-        Em colaboração com{' '}
-        <a
-          href="https://www.youtube.com/@toffanettodev"
-          style={{ textDecoration: 'none' }}
-        >
-          @toffanettodev
-        </a>
-      </>
+      <a
+        href="https://turn-based-ai.nakazawa.dev/"
+        style={{ textDecoration: 'none' }}
+      >
+        turn-based-ai.nakazawa.dev
+      </a>
     }
     style={{
       alignSelf: 'end',
@@ -61,101 +72,13 @@ export { Themes } from './Themes';
 
 ---
 
-image: CoverEmpty.jpg
-transition: none
-
---
-
-<Center>
-  <Video
-    src="/react-tetris-gameplay.mp4"
-    style={{
-      marginTop: 50,
-      borderRadius: 20,
-      width: '20%',
-    }}
-  />
-</Center>
-
----
-
-image: CoverEmpty.jpg
-transition: none
-
---
-
-# Jest & JavaScript Infra
-
-<Center>
-  <Video
-    src="/Jest.mp4"
-    style={{
-      marginTop: -60,
-      marginLeft: 10,
-      borderRadius: 20,
-      width: '45%',
-    }}
-  />
-</Center>
-
----
-
-image: CoverEmpty.jpg
-theme: dark
-transition: leaveOnly
-
---
-
-# Nakazawa Tech KK
-
-<Center>
-  <div
-    style={{
-      color: '#fff',
-      height: '50%',
-      width: '40%',
-    }}
-  >
-    Work with us!
-
-    - [nakazawa.dev](https://nakazawa.dev)
-
-    - [christoph@nakazawa.dev](mailto:christoph@nakazawa.dev)
-
-  </div>
-</Center>
-
----
-
-theme: dark
+image: Cover.jpg
 
 --
 
 <Center>
 
-<h1 style={{ paddingRight: 10 }}>
-  <i>Demo</i>
-</h1>
-
-</Center>
-
----
-
-<Center>
-
-# Building the AI for Athena Crisis
-
-</Center>
-
----
-
-transition: none
-
---
-
-<Center>
-
-# Building the AI for Athena Crisis
+# Algoritmos e arquitetura com Tetris
 
 </Center>
 <div style={{
@@ -175,39 +98,13 @@ transition: none
     top: '50%',
     transform: 'translate(-50%, -50%) rotate(-35deg)',
     width: '120%',
-}}>Warning: Code Heavy Talk</div>
+}}>Aviso: Vamos falar de código</div>
 
 ---
 
 transition: leaveOnly
 
 --
-
-<Center>
-
-# Building the AI for Athena Crisis
-
-</Center>
-<div style={{
-    backdropFilter: 'blur(5px)',
-    backgroundColor: '#00bb00aa',
-    borderBottom: '4px solid #fff',
-    borderTop: '4px solid #fff',
-    boxShadow: 'rgb(0, 0, 0, 0.6) 0 0 8px',
-    color: '#fff',
-    fontSize: '1.8em',
-    fontWeight: 'bold',
-    left: '50%',
-    padding: 24,
-    position: 'absolute',
-    textAlign: 'center',
-    textShadow: 'rgb(0, 0, 0, 0.4) 0.5px 1px 2px',
-    top: '50%',
-    transform: 'translate(-50%, -50%) rotate(-35deg)',
-    width: '120%',
-}}>But: Beginner Friendly</div>
-
----
 
 <Stack alignCenter nowrap style={{flex: 1}}>
 
@@ -229,27 +126,10 @@ transition: leaveOnly
 
 # Por que React?
 
-<Stack alignCenter nowrap style={{flex: 1}}>
-
-<div>
-
-<h1 style={{ fontSize: '1.6em' }}>Prós</h1>
-
-- Acessibilidade
-- Aprendizado Progressivo em Jogos
-
-</div>
-
-<div>
-
-<h1 style={{ fontSize: '1.6em' }}>Contras</h1>
-
-- Readequação
-- Performance
-
-</div>
-
-</Stack>
+- 😃 Acessibilidade
+- 😃 Para estudar
+- 😣 Performance
+- 😣 Retrabalho
 
 ---
 
@@ -259,19 +139,75 @@ transition: none
 
 # Overview
 
+- Design orientado a erros
+- Estado centralizado
+
 ---
 
 transition: none
 
 --
 
-# IA para balanceamento
+# Athena Crisis Architecture
 
-- Design orientado
+<Stack nowrap>
 
-<Stack alignCenter nowrap>
-  <img src="/Cluster1.png" width="30%" marginLeft="20%" />
-  <img src="/Cluster2.png" width="30%" marginLeft="20%" />
+<Code>
+
+```ts highlight={4,10,16}
+type Vector = { x: number; y: number };
+type AttackUnitAction = {
+  from: Vector;
+  to: Vector;
+  type: 'AttackUnit';
+};
+/// ----- transforms -----
+type AttackUnitActionResponse = {
+  from: Vector;
+  to: Vector;
+  type: 'AttackUnit';
+  unitA?: Unit;
+  unitB?: Unit;
+};
+/// ----- via codegen -----
+type EncodedAttackUnitActionResponse = [
+  type: 1,
+  fromX: number,
+  fromY: number,
+  toX: number,
+  toY: number,
+  unitA?: PlainUnit | null,
+  unitB?: PlainUnit | null,
+];
+```
+
+</Code>
+<Code>
+
+```ts highlight={18}
+function attackUnit(map: MapData, { from, to }: AttackUnitAction) {
+  const unitA = map.units.get(from);
+  const unitB = map.units.get(to);
+
+  if (
+    map.isOpponent(unitA, unitB) &&
+    !unitA.isCompleted() &&
+    unitA.canAttack(from.distance(to))
+  ) {
+    // damage calculation…
+    return {
+      from,
+      to,
+      type: 'AttackUnit',
+      unitA: a.isDead() ? undefined : a,
+      unitB: b.isDead() ? undefined : b,
+    };
+  }
+}
+```
+
+</Code>
+
 </Stack>
 
 ---

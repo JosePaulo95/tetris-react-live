@@ -56,7 +56,7 @@ h1,
   -webkit-box-decoration-break: clone;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to right, #5e9fff, #c084fc, #e879f9);
+  background-image: linear-gradient(to right, #5e9fff, #1d92af, #3967a3);
   box-decoration-break: clone;
   text-transform: uppercase;
   filter: drop-shadow(rgb(0, 0, 0, 0.8) 1px 1px 1px);
