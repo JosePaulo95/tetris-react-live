@@ -7,14 +7,22 @@ export { Themes } from './Themes';
   center
   stretch
   style={{
-    backgroundColor: 'cornflowerblue',
     inset: 0,
     overflow: 'hidden',
     position: 'absolute',
     zIndex: 0,
     zoom: 0.63,
   }}
-></Stack>
+>
+  <img
+    src="tetris-bg.png"
+    style={{
+      width: '100%', // Define a largura como 100%
+      height: '100%', // Define a altura como 100%
+      objectFit: 'cover', // Faz a imagem cobrir todo o contêiner
+    }}
+  />
+</Stack>
 <Stack
   center
   selfCenter
@@ -79,71 +87,13 @@ transition: none
 
 ---
 
-image: CoverEmpty.jpg
 transition: none
 
 --
 
-# Jest & JavaScript Infra
-
-<Center>
-  <Video
-    src="/Jest.mp4"
-    style={{
-      marginTop: -60,
-      marginLeft: 10,
-      borderRadius: 20,
-      width: '45%',
-    }}
-  />
-</Center>
-
----
-
-image: CoverEmpty.jpg
-theme: dark
-transition: leaveOnly
-
---
-
-# Nakazawa Tech KK
-
-<Center>
-  <div
-    style={{
-      color: '#fff',
-      height: '50%',
-      width: '40%',
-    }}
-  >
-    Work with us!
-
-    - [nakazawa.dev](https://nakazawa.dev)
-
-    - [christoph@nakazawa.dev](mailto:christoph@nakazawa.dev)
-
-  </div>
-</Center>
-
----
-
-theme: dark
-
---
-
 <Center>
 
-<h1 style={{ paddingRight: 10 }}>
-  <i>Demo</i>
-</h1>
-
-</Center>
-
----
-
-<Center>
-
-# Building the AI for Athena Crisis
+# Algoritmos e arquitetura com Tetris
 
 </Center>
 
@@ -155,7 +105,7 @@ transition: none
 
 <Center>
 
-# Building the AI for Athena Crisis
+# Algoritmos e arquitetura com Tetris
 
 </Center>
 <div style={{
@@ -175,7 +125,7 @@ transition: none
     top: '50%',
     transform: 'translate(-50%, -50%) rotate(-35deg)',
     width: '120%',
-}}>Warning: Code Heavy Talk</div>
+}}>Aviso: vamos falar de código</div>
 
 ---
 
@@ -185,7 +135,7 @@ transition: leaveOnly
 
 <Center>
 
-# Building the AI for Athena Crisis
+# Algoritmos e arquitetura com Tetris
 
 </Center>
 <div style={{
@@ -205,7 +155,7 @@ transition: leaveOnly
     top: '50%',
     transform: 'translate(-50%, -50%) rotate(-35deg)',
     width: '120%',
-}}>But: Beginner Friendly</div>
+}}>Mas: Amigável para iniciantes </div>
 
 ---
 
@@ -213,13 +163,12 @@ transition: leaveOnly
 
 <div>
 
-<h1 style={{ fontSize: '1.6em' }}>Sumário</h1>
+<h1 style={{ fontSize: '1.6em' }}>Roteiro</h1>
 
 - Por que React?
 - Overview
 - IA para balanceamento
 - O problema dos grafos
-- Animações
 
 </div>
 
@@ -475,7 +424,9 @@ theme: dark
 
 ---
 
-# IA
+## Algoritmo de balanceamento
+
+- Altura média do tabuleiro como métrica
 
 <Stack alignCenter center nowrap>
 
