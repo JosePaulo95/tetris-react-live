@@ -420,30 +420,265 @@ useEffect(() => {
 
 ---
 
-transition: none
+theme: dark
 
 --
 
-# Orientação a erros
+<Center>
 
-- Erros são actions de 2ª instancia
+<h1 style={{ paddingRight: 10 }}>
+  <i>Balanceamento</i>
+</h1>
+
+</Center>
+
+---
+
+# Algoritmos generativos
+
+- Design e identidade
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="candy.gif" width="30%" />
+
+</Stack>
+
+---
+
+# Primeiras abordagens
+
+- 100% aleatório
+- Random bag
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="random-bag.gif" width="35%" />
+
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="ia-1.png" width="400px" />
+
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="ia-9.png" width="300px" />
+
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="ia-3.png" width="300px" />
+
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="ia-5.png" width="400px" />
+
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="ia-7.png" width="700px" />
+
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="ia-7.png" width="700px" />
+
+</Stack>
+
+---
+
+# IA
+
+- Usa força bruta para buscar o melhor score entre peças, rotações e posições possíveis
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="dr-strange-infinity-war.gif" width="700px" />
+</Stack>
+
+---
+
+# IA
+
+<Stack alignCenter center nowrap>
+
+{' '}
 
 <Code>
 ```ts
-useEffect(() => {
-    try {
-      handleMatches(blocks, ticks, dispatch);
-      handleResetPiece(blocks, dispatch);
-      handleFloatingsGoingDown(blocks, ticks, dispatch);
-      handlePieceGoingDown(blocks, ticks, dispatch);
-      handleUserInput(
-        userController.current_input_x,
-        userController.current_input_y,
-        dispatch,
-      );
-    } catch (collision) {
-      handleCollision(collision as Error, dispatch);
+export const nextPiece = (boardState: BlocksState) => {
+  const pieces = allPieces();
+  const ocorenciesNormalized = normalizeOcorencies(ocorencies);
+  const avgHeight = calcAverageHeight(boardState);
+
+   // tabuleiro vazio, manda a que menos apareceu
+  if (avgHeight == 0) {
+    nextIndex = ocorenciesNormalized.sort()[0];
+   // se tiver uma rara demais, manda ela
+  } else if (ocorenciesNormalized.some((i) => i < 0.8 / ocorencies.length)) {
+    nextIndex = ocorenciesNormalized.findIndex((i) => i < 0.8 / ocorencies.length);
+  } else {
+    // manda a com melhor score
+    const withScores = calcPiecesFitness(floatingJoinned!, pieces, 0);
+    let index = withScores.sort((a, b) => a.score - b.score)[0].id;
+    if (index == nextIndex) {
+      index = withScores.sort((a, b) => a.score - b.score)[1].id;
     }
-}, [ticks]);
+    nextIndex = index;
+  }
+
+  ocorencies[nextIndex]++;
+  return pieces[nextIndex];
+};
 ```
 </Code>
+</Stack>
+
+---
+
+theme: dark
+
+--
+
+<Center>
+
+<h1 style={{ paddingRight: 10 }}>
+  <i>Uso de grafos</i>
+</h1>
+
+</Center>
+
+---
+
+# Blocos flutuantes
+
+- Após uma combinação, todos os blocos de cima descem uma unidade
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="grafo-1.png" width="700px" />
+</Stack>
+
+---
+
+# Blocos flutuantes
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="grafo-2.png" width="700px" />
+</Stack>
+
+---
+
+# Blocos flutuantes
+
+- Conversão de matriz para grafo
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="grafo-6.png" width="300px" />
+<img src="grafo-3 - Copia.png" width="400px" />
+</Stack>
+
+---
+
+# Blocos flutuantes
+
+- Busca dos subgrafos desconexos
+
+<Stack alignCenter center nowrap>
+
+{' '}
+
+<img src="grafo-4 - Copia.png" width="310px" />
+<img src="grafo-5.png" width="400px" />
+</Stack>
+
+---
+
+# Blocos flutuantes
+
+<Code>
+```ts
+function findDisconnectedGraphs(grid: number[][]): number[][][] {
+  const rows: number = grid.length;
+  const cols: number = grid[0].length;
+  const visited: boolean[][] = Array.from({ length: rows }, () =>
+    Array(cols).fill(false),
+  );
+  const disconnectedGraphs: number[][][] = [];
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (grid[row][col] !== 0 && !visited[row][col]) {
+        const disconnectedGraph: number[][] = [];
+
+        bfs(row, col, grid, visited, disconnectedGraph);
+
+        disconnectedGraphs.push(disconnectedGraph);
+      }
+    }
+  }
+
+  return disconnectedGraphs;
+}
+```
+</Code>
+
+
