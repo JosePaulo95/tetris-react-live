@@ -1,7 +1,7 @@
-# Building the AI for Athena Crisis
+# algoritmos e arquitetura com Tetris
 
-[![Title Image of the Presentation](./title.png)](https://turn-based-ai.nakazawa.dev/)
+[![Imagem do slide inicial](./slide0.png)](https://tetris-react-live.vercel.app)
 
-A presentation about building the AI for Athena Crisis. View on [turn-based-ai.nakazawa.dev](https://turn-based-ai.nakazawa.dev/).
+Slides sobre Algoritmos e arquitetura com Tetris apresentado no [canal do Éverton Toffaneto](https://www.youtube.com/watch?v=vNbXOLPulRo&ab_channel=%C3%89vertonToffanetto).
 
-This presentation was built using [ReMDX](https://github.com/cpojer/remdx).
+Feito usando [ReMDX](https://github.com/cpojer/remdx).
