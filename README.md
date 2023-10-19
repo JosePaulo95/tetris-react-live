@@ -1,4 +1,4 @@
-# algoritmos e arquitetura com Tetris
+# Algoritmos e Arquitetura com Tetris
 
 [![Imagem do slide inicial](./slide0.png)](https://tetris-react-live.vercel.app)
 
